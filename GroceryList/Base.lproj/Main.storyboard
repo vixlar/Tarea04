@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7Y8-a8-yRb">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Grocery List-->
+        <scene sceneID="Hc2-vj-e2X">
+            <objects>
+                <tableViewController id="RaT-YT-wnJ" customClass="TableVC" customModule="GroceryList" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="zhG-Ft-qxr">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="Yvs-hP-bhj" detailTextLabel="qqG-bq-Mmi" imageView="ZQl-MY-RkC" style="IBUITableViewCellStyleSubtitle" id="DUr-en-bhf">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DUr-en-bhf" id="8ye-ex-dZ3">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Yvs-hP-bhj">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qqG-bq-Mmi">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="groceryimg" id="ZQl-MY-RkC">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </imageView>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="vXZ-lx-hvc" kind="show" identifier="edit" id="v1A-dj-Bqc"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="RaT-YT-wnJ" id="oeo-gH-mh5"/>
+                            <outlet property="delegate" destination="RaT-YT-wnJ" id="JDs-PM-Ba7"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Grocery List" id="nmo-Tx-aEh">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="rtM-by-LPR">
+                            <connections>
+                                <segue destination="vXZ-lx-hvc" kind="show" identifier="add" id="5Dn-P7-0za"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="faF-qL-OfP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="566" y="277"/>
+        </scene>
+        <!--Add / Edit Item-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="MainVC" customModule="GroceryList" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Item name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jDp-mh-nZB">
+                                <rect key="frame" x="16" y="104" width="272" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="272" id="f7W-Kk-KV8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Item Note" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="igr-su-fX4">
+                                <rect key="frame" x="16" y="152" width="272" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Quantity" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eLv-hk-lbA">
+                                <rect key="frame" x="16" y="198" width="272" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="igr-su-fX4" firstAttribute="leading" secondItem="eLv-hk-lbA" secondAttribute="leading" id="4gH-Fa-Wpw"/>
+                            <constraint firstItem="jDp-mh-nZB" firstAttribute="trailing" secondItem="igr-su-fX4" secondAttribute="trailing" id="COX-hK-iPW"/>
+                            <constraint firstItem="igr-su-fX4" firstAttribute="top" secondItem="jDp-mh-nZB" secondAttribute="bottom" constant="18" id="LZT-ZM-R2c"/>
+                            <constraint firstItem="jDp-mh-nZB" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="40" id="P7D-Rs-4Yq"/>
+                            <constraint firstItem="igr-su-fX4" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="XfM-s1-ZeX"/>
+                            <constraint firstItem="igr-su-fX4" firstAttribute="trailing" secondItem="eLv-hk-lbA" secondAttribute="trailing" id="Z0M-RU-QSo"/>
+                            <constraint firstItem="eLv-hk-lbA" firstAttribute="top" secondItem="igr-su-fX4" secondAttribute="bottom" constant="16" id="gHC-I2-kXX"/>
+                            <constraint firstItem="igr-su-fX4" firstAttribute="leading" secondItem="jDp-mh-nZB" secondAttribute="leading" id="rlu-Nx-tXy"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add / Edit Item" id="mtY-tR-Ngf">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="nc6-VT-RWH">
+                            <connections>
+                                <action selector="cancelTapped:" destination="vXZ-lx-hvc" id="Owu-CB-pdG"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="ru1-vm-OvX">
+                            <connections>
+                                <action selector="saveTapped:" destination="vXZ-lx-hvc" id="k6h-oe-fRk"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="entryItem" destination="jDp-mh-nZB" id="QSk-2O-Qnq"/>
+                        <outlet property="entryNote" destination="igr-su-fX4" id="RZy-NM-13t"/>
+                        <outlet property="entryQty" destination="eLv-hk-lbA" id="TXo-AT-T5H"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1256" y="277"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="JAQ-Kv-FGv">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7Y8-a8-yRb" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qMQ-8G-Y9n">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="RaT-YT-wnJ" kind="relationship" relationship="rootViewController" id="NTt-KT-89R"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RbN-Bc-Lbe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-246" y="277"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="groceryimg" width="256" height="256"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="v1A-dj-Bqc"/>
+    </inferredMetricsTieBreakers>
+</document>
